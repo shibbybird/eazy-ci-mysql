@@ -1,0 +1,13 @@
+eazyVersion: '1.0'
+name: 'eazy-ci-mysql'
+image: 'shibbybird/eazy-ci-mysql'
+releases:
+  - 'latest'
+  - '8.0.17'
+deployment:
+  ports:
+    - 3306
+  health:
+    - '/bin/sh'
+    - '-c'
+    - 'while ! mysqladmin -h eazy-ci-mysql -u root -peazy-admin status; do sleep 1; done; exit;'

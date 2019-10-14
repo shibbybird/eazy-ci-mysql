@@ -1,0 +1,3 @@
+FROM mysql:8.0.17
+
+ENV MYSQL_ROOT_PASSWORD eazy-admin
